@@ -3,8 +3,6 @@ import Nav from './Nav'
 import Paths from './Paths'
 import './App.css';
 
-
-
 class App extends React.Component {
   static defaultProps = {
     superHeros: [
@@ -40,21 +38,16 @@ class App extends React.Component {
       }
     ]
   }
-  state = {}
+
   render() {
-
-
-
-
     return (
       <div>
         <Nav superHeros={this.props.superHeros} />
         <div className="container">
           <Paths superHeros={this.props.superHeros} />
         </div>
-
       </div >
-    );
+    )
   }
 }
 

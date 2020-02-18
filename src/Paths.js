@@ -1,7 +1,7 @@
 import React from 'react';
 import SuperHeros from './SuperHeros'
 import SuperHero from './SuperHero'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 const Routes = props => {
     let superHeros = props.superHeros
@@ -16,7 +16,8 @@ const Routes = props => {
             <Route exact path='/superheros' render={(routerProps) =>
                 <SuperHeros superHeros={props.superHeros}
                     {...routerProps} />}></Route>
-            <Route path='/superheros/:name' render={getHero}></Route>
+            <Route exact path='/superheros/:name' render={getHero}></Route>
+            <Redirect to="/superheros"/>
         </Switch>
     )
 }
