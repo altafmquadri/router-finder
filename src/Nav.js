@@ -7,14 +7,14 @@ const Nav = (props) => {
 
     const renderLinks = (props) => {
         return props.superHeros.map(l => <NavLink
-            to={`/${l.name.toLowerCase()}`}
+            to={`/superheros/${l.name.toLowerCase()}`}
             key={l.name}>{l.name}</NavLink>)
     }
 
     return (
         <div>
             <nav>
-                <NavLink to='/'>Home</NavLink>
+                <NavLink to='/superheros'>SuperHeros</NavLink>
                 {renderLinks(props)}
             </nav>
         </div>
