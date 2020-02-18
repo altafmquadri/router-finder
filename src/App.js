@@ -1,8 +1,6 @@
 import React from 'react';
 import Nav from './Nav'
-import SuperHeros from './SuperHeros'
-import SuperHero from './SuperHero'
-import { Switch, Route } from 'react-router-dom'
+import Paths from './Paths'
 import './App.css';
 
 
@@ -45,23 +43,16 @@ class App extends React.Component {
   state = {}
   render() {
 
-    const getHero = props => {
-      let name = props.match.params.name
-      let hero = this.props.superHeros.find(s => s.name.toLowerCase() === name)
-      return <SuperHero {...props} hero={hero} />
-    }
+
 
 
     return (
       <div>
         <Nav superHeros={this.props.superHeros} />
-        <Switch>
-          <Route exact path='/superheros' render={(routerProps) =>
-            <SuperHeros superHeros={this.props.superHeros}
-              {...routerProps} />}></Route>
+        <div className="container">
+          <Paths superHeros={this.props.superHeros} />
+        </div>
 
-          <Route path='/superheros/:name' render={getHero}></Route>
-        </Switch>
       </div >
     );
   }

@@ -1,11 +1,11 @@
 import React from 'react';
 import './SuperHero.css'
+import { Link } from 'react-router-dom'
 
 const SuperHero = props => {
     const { name, src, age, facts } = props.hero
     return (
-        <div className="container">
-            <div className="SuperHero row">
+            <div className="SuperHero row justify-content-center mt-5">
                 <div className="col-11 col-lg-5">
                     <div className="SuperHero-card card">
                         <img className="card-img-top" src={src} alt={name} />
@@ -18,10 +18,10 @@ const SuperHero = props => {
                                 <li className='list-group-item' key={i}>{f}</li>
                             ))}
                         </ul>
+                        <div className='card-body'><Link className="btn btn-info" to='/superheros'>Go Back</Link></div>
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

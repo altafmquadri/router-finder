@@ -13,12 +13,10 @@ const SuperHeros = (props) => {
     return (
         <div className="SuperHeros">
             <h1 className="display-1 text-center">Super Heros!</h1>
-            <div className='container'>
                 <div className='row'>
                     {renderHeros(props)}
                 </div>
             </div>
-        </div>
     )
 }
 
